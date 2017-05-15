@@ -10,7 +10,7 @@ import datetime
 import spotipy
 import json
 
-from config import WUML_SECRET
+from config import WUML_SECRET, MY_URL, MY_PORT
 
 from flask import Flask
 from flask import request
@@ -196,4 +196,4 @@ def auto_heal():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=54321, host="0.0.0.0", threaded=True)
+    app.run(debug=True, port=MY_PORT, host=MY_URL, threaded=True)
