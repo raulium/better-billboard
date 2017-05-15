@@ -138,16 +138,11 @@ def find_it(my_string):
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-
-@app.route('/search/')
 def my_form():
     return render_template("search.html", first='true', time=last_update())
 
 
-@app.route('/search/', methods=['POST'])
+@app.route('/', methods=['POST'])
 def my_form_post():
     text = request.form['searchBar']
     elist, clist = find_it(text)
