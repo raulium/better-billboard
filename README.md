@@ -26,7 +26,7 @@ MY_PORT = 54321
 * Funciton: Forces the application to perform an update for the last 7 days.  It will scrub the billboard website for the last 7 days of chart records and incorporate into its json flat-file database.
 * Example:
 ```
-curl -H "Content-Type: application/json" -sX POST -d '{"key":"YOUR KEY HERE"}' http://URL-TO-THE-APPLCIATION/update
+curl -H "Content-Type: application/json" -sX POST -d '{"key":"YOUR KEY HERE"}' http://URL-TO-THE-APPLCIATION:MY_PORT/update
 ```
 
 ### Heal
@@ -34,5 +34,5 @@ curl -H "Content-Type: application/json" -sX POST -d '{"key":"YOUR KEY HERE"}' h
 * Function: Forces the application to find the latest chart record, and attempt to update the json flat-file database from that date to present.
 * Example:
 ```
-curl -H "Content-Type: application/json" -sX POST -d '{"key":"YOUR KEY HERE"}' http://URL-TO-THE-APPLCIATION/heal
+curl -H "Content-Type: application/json" -sX POST -d '{"key":"YOUR KEY HERE"}' http://URL-TO-THE-APPLCIATION:MY_PORT/heal
 ```
