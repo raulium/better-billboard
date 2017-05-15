@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Monda');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+input[type=text], input[type=submit], {
+	font-family: 'Monda', sans-serif;
+	padding: 10px;
+	border: 2px solid #ddd;
+    border-radius: 4px;
+	box-sizing: border-box;
+}
+
+table {
+	border-collapse:collapse;
+	width: 100%;
+}
+
+th {
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+	font-family: 'Lobster', cursive;
+	font-size: 120%;
+}
+
+td {
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+	font-family: 'Monda', sans-serif;
+}
+
+h1 {
+	padding: 20px;
+	border-bottom: 1px solid #ddd;
+	font-family: 'Bungee Inline', cursive;
+	font-size: 200%;
+}
+
+p {
+	padding: 8px;
+	font-family: 'Monda', sans-serif;
+}
+
+a:link, a:active {
+	color: black;
+}
+
+a:visited, a:hover {
+	color: #888;
+}
+
+#inner {
+    width: 60%;
+    margin: 0 auto;
+}
+#myform {
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+.bad {
+	background: #F6B6B6;
+}

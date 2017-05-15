@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artist Chart Search</title>
+    <LINK rel="stylesheet" type="text/css" href="/static/styles/style.css" title="Default Styles" media="screen">
+</head>
+<body>
+    <div id="outer" style="width:100%">
+
+        <div id="inner">
+            <div>
+                <h1>Billboard-200 Artist Search</h1>
+                <p>
+                    Search an artist to find their highest chart number on the Billboard 200.  This page contains all the Billboard 200 charts from {{ time }} to August 17, 1963.  If they've charted, it's here.
+                </p>
+            </div>
+            <div id="myform">
+                <form action="." method="POST">
+                    <input type="text" name="searchBar" size="50" placeholder="Search the database">
+                    <input type="submit" name="searchButton" value="Search">
+                </form>
+            </div>
+            <div id="results">
+                <table>
+                	<tr>
+                		<th sytle="width:60%; padding-right:40px;" align="left">Artist</th>
+                		<th style="width:40%">Highest Chart Number (All Time)</th>
+                	</tr>
+        {% if first == 'true' %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+        {% else %}
+            {% if result == 'false' %}
+                    <tr>
+                        <td>ARTIST NOT FOUND MATCHING:</td>
+                        <td><em>{{ tested }}</em></td>
+                    </tr>
+            {% else %}
+
+                {% if e_list %}
+
+                    {% for i in e_list %}
+                        {% if i[1][0] <= 40 %}
+                    <tr class="bad">
+                        <td><a href=" {{ i[1][1] }} ">{{ i[0] }}</a></td>
+                        <td align="center">{{ i[1][0] }}</td>
+                    </tr>
+                        {% else %}
+                    <tr>
+                        <td><a href=" {{ i[1][1] }} ">{{ i[0] }}</a></td>
+                        <td align="center">{{ i[1][0] }}</td>
+                    </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                {% else %}
+                    <tr>
+                        <td>NO EXACT MATCHES FOUND FOR:</td>
+                        <td><em>{{ tested }}</em></td>
+                    </tr>
+                {% endif %}
+
+                {% if c_list %}
+
+                    {% for i in c_list %}
+                        {% if i[1][0] <= 40 %}
+                    <tr class="bad">
+                        <td><a href=" {{ i[1][1] }} ">{{ i[0] }}</a></td>
+                        <td align="center">{{ i[1][0] }}</td>
+                    </tr>
+                        {% else %}
+                    <tr>
+                        <td><a href=" {{ i[1][1] }} ">{{ i[0] }}</a></td>
+                        <td align="center">{{ i[1][0] }}</td>
+                    </tr>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
