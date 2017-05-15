@@ -12,12 +12,14 @@ Add a config.py file to the main program directory, with the following:
 WUML_SECRET = 'YOUR KEY HERE'
 MY_URL = '0.0.0.0'
 MY_PORT = 54321
+APP_PATH = 'PARENT-PATH-TO-APPLICATION-FOLDER-ON-SERVER'
 ```
 * WUML_SECRET:  The key you plan to use to authenticate administrative functions to the API
-* MY_URL: The IP or URL of the applicaiton when it runs.
+* MY_URL: The IP or URL of the application when it runs.
   * This example is the default, localhost (0.0.0.0)
-* MY_PORT: The port number the applicaiton will run on
+* MY_PORT: The port number the application will run on
   * This example is the default, 54321
+* APP_PATH: The folder/parent path to the application on the server
 
 #### Dependencies
 * [Billboard](https://github.com/guoguo12/billboard-charts)
