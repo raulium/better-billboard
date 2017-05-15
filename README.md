@@ -19,9 +19,13 @@ MY_PORT = 54321
 * MY_PORT: The port number the applicaiton will run on
   * This example is the default, 54321
 
+#### Dependencies
+* [Billboard](https://github.com/guoguo12/billboard-charts)
+* [Flask](http://flask.pocoo.org/)
+
 ## API
 
-### Update
+#### Update
 * Type: POST
 * Funciton: Forces the application to perform an update for the last 7 days.  It will scrub the billboard website for the last 7 days of chart records and incorporate into its json flat-file database.
 * Example:
@@ -29,7 +33,7 @@ MY_PORT = 54321
 curl -H "Content-Type: application/json" -sX POST -d '{"key":"YOUR KEY HERE"}' http://URL-TO-THE-APPLCIATION:MY_PORT/update
 ```
 
-### Heal
+#### Heal
 * Type: POST
 * Function: Forces the application to find the latest chart record, and attempt to update the json flat-file database from that date to present.
 * Example:
