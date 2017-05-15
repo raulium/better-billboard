@@ -108,7 +108,7 @@ def zero_padding(num):
 def jsave(my_dict):
 	d = datetime.datetime.now()
 	filename = dto_to_string(d) + '.json'
-	with open(filename, 'w') as fp:
+	with open(APP_PATH + "/" + filename, 'w') as fp:
 		json.dump(my_dict, fp)
 
 
@@ -120,7 +120,7 @@ def jload():
 			times.append(f)
 	times = sorted(times)
 	filename = times[len(times)-1]
-	with open(filename) as data_file:
+	with open(APP_PATH + "/" + filename) as data_file:
 		data = json.load(data_file)
 	return data
 
