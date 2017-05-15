@@ -3,19 +3,16 @@
 # REQ:
 #	Billboard
 #	flask
-#	spotipy
 
 import billboard
 import datetime
-import spotipy
 import json
 
-from config import WUML_SECRET, MY_URL, MY_PORT
+from config import WUML_SECRET, MY_URL, MY_PORT, APP_PATH
 
 from flask import Flask
 from flask import request
 from flask import render_template
-from spotipy import oauth2
 from os import listdir
 from os.path import isfile, join
 
@@ -117,7 +114,7 @@ def jsave(my_dict):
 
 def jload():
 	times = list()
-	files = [f for f in listdir('./') if isfile(join('./', f))]
+	files = [f for f in listdir(APP_PATH) if isfile(join(APP_PATH, f))]
 	for f in files:
 		if '.json' in f:
 			times.append(f)
